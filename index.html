@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🎰 TG NFT Казік</title>
+<style>
+  body {
+    background: radial-gradient(circle at center, #111, #000);
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  h1 { color: #ffb400; }
+  #result { margin-top: 20px; font-size: 24px; white-space: pre-line; }
+  button {
+    background: linear-gradient(90deg,#ffb400,#ff007a);
+    border:none;color:#fff;
+    padding:12px 25px;border-radius:10px;
+    font-size:18px;cursor:pointer;
+  }
+  button:hover{opacity:0.8;}
+</style>
+</head>
+<body>
+  <h1>🎰 TG NFT Казік</h1>
+  <p>Крутни барабан — виграй ⭐ або NFT!</p>
+  <button onclick="spin()">🎲 SPIN</button>
+  <div id="result"></div>
+<script>
+function spin(){
+  const symbols=["⭐","🍒","💎","7️⃣","🔥"];
+  const roll=[symbols[Math.random()*symbols.length|0],
+              symbols[Math.random()*symbols.length|0],
+              symbols[Math.random()*symbols.length|0]];
+  const res=document.getElementById("result");
+  res.textContent=roll.join(" ");
+  if(roll[0]==roll[1]&&roll[1]==roll[2])
+    res.textContent+="\\n🎉 Ти виграв NFT Lucky Cat!";
+  else
+    res.textContent+="\\n😢 Невдача, спробуй ще!";
+}
+</script>
+</body>
+</html>
